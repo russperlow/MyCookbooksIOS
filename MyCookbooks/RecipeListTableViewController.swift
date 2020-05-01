@@ -42,9 +42,9 @@ class RecipeListTableViewController: UITableViewController {
         let recipe: Recipe = recipeDb.recipeList[indexPath.row];
 
         cell.recipeTitle.text = recipe.title
-
-        cell.imageView?.image = ImageResourceManager.sharedInstance.getSavedImage(name: recipe.title)
         
+        let image = ImageResourceManager.sharedInstance.getSavedImage(name: recipe.title)
+        cell.imageView?.image = image
         return cell
     }
     

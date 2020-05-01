@@ -49,11 +49,25 @@ class SearchedRecipeTableViewController: UITableViewController, SearchedRecipeDe
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "recipe")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchedCell", for: indexPath) as! SearchedRecipeTableViewCell
+        
         let recipe: SearchedRecipe
         recipe = searchedRecipes[indexPath.row]
-        cell.textLabel?.text = recipe.title
+        cell.textView.text = recipe.title
+        
+        let url = URL(string: recipe.image)
+        let data = try? Data(contentsOf: url!)
+        cell.imageView?.image = UIImage(data: data!)
+        
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let searchedRecipe = searchedRecipes[indexPath.row]
+        if let url = URL(string: searchedRecipe.href) {
+            UIApplication.shared.open(url)
+        }
+        
+    }
 }

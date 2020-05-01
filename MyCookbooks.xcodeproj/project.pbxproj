@@ -22,6 +22,7 @@
 		D2369235245CAE5300100012 /* SearchedRecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369234245CAE5300100012 /* SearchedRecipeTableViewController.swift */; };
 		D2369237245CB47B00100012 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369236245CB47B00100012 /* RecipeTableViewCell.swift */; };
 		D2369239245CBEB200100012 /* ImageResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369238245CBEB200100012 /* ImageResourceManager.swift */; };
+		D236923B245CDF0F00100012 /* SearchedRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236923A245CDF0F00100012 /* SearchedRecipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D2369234245CAE5300100012 /* SearchedRecipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedRecipeTableViewController.swift; sourceTree = "<group>"; };
 		D2369236245CB47B00100012 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		D2369238245CBEB200100012 /* ImageResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResourceManager.swift; sourceTree = "<group>"; };
+		D236923A245CDF0F00100012 /* SearchedRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedRecipeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				D236922E245BC0BB00100012 /* RecipeListTableViewController.swift */,
 				D2369238245CBEB200100012 /* ImageResourceManager.swift */,
 				D2369236245CB47B00100012 /* RecipeTableViewCell.swift */,
+				D236923A245CDF0F00100012 /* SearchedRecipeTableViewCell.swift */,
 				D2369230245C8AB800100012 /* RestApiManager.swift */,
 				D2369234245CAE5300100012 /* SearchedRecipeTableViewController.swift */,
 				D236920F245B828B00100012 /* Main.storyboard */,
@@ -185,6 +188,7 @@
 				D2369223245B86E500100012 /* Recipe.swift in Sources */,
 				D2369233245C9E2800100012 /* SearchedRecipe.swift in Sources */,
 				D2369239245CBEB200100012 /* ImageResourceManager.swift in Sources */,
+				D236923B245CDF0F00100012 /* SearchedRecipeTableViewCell.swift in Sources */,
 				D2369208245B828B00100012 /* AppDelegate.swift in Sources */,
 				D236922F245BC0BB00100012 /* RecipeListTableViewController.swift in Sources */,
 				D236920A245B828B00100012 /* SceneDelegate.swift in Sources */,
