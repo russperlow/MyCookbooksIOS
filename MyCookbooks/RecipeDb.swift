@@ -44,22 +44,22 @@ class RecipeDb {
             return
         }
         
-        if sqlite3_bind_text(stmt, 1, title, -1, nil) != SQLITE_OK{
+        if sqlite3_bind_text(stmt, 1, NSString(string: title).utf8String, -1, nil) != SQLITE_OK{
             sqlError(specific: "binding title")
             return
         }
         
-        if sqlite3_bind_text(stmt, 2, ingredients, -1, nil) != SQLITE_OK{
+        if sqlite3_bind_text(stmt, 2, NSString(string: ingredients).utf8String, -1, nil) != SQLITE_OK{
             sqlError(specific: "binding ingredients")
             return
         }
         
-        if sqlite3_bind_text(stmt, 3, steps, -1, nil) != SQLITE_OK{
+        if sqlite3_bind_text(stmt, 3, NSString(string: steps).utf8String, -1, nil) != SQLITE_OK{
             sqlError(specific: "binding steps")
             return
         }
         
-        if sqlite3_bind_text(stmt, 4, image, -1, nil) != SQLITE_OK{
+        if sqlite3_bind_text(stmt, 4, NSString(string: image).utf8String, -1, nil) != SQLITE_OK{
             sqlError(specific: "binding image")
             return
         }

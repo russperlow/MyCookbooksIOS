@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D2369208245B828B00100012 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369207245B828B00100012 /* AppDelegate.swift */; };
 		D236920A245B828B00100012 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369209245B828B00100012 /* SceneDelegate.swift */; };
-		D236920C245B828B00100012 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236920B245B828B00100012 /* RecipeListViewController.swift */; };
 		D236920E245B828B00100012 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236920D245B828B00100012 /* SecondViewController.swift */; };
 		D2369211245B828B00100012 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D236920F245B828B00100012 /* Main.storyboard */; };
 		D2369213245B829800100012 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2369212245B829800100012 /* Assets.xcassets */; };
@@ -17,13 +16,14 @@
 		D236921E245B82DE00100012 /* RecipeDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236921D245B82DE00100012 /* RecipeDb.swift */; };
 		D2369223245B86E500100012 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369222245B86E500100012 /* Recipe.swift */; };
 		D2369227245B967C00100012 /* NewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369226245B967C00100012 /* NewRecipeViewController.swift */; };
+		D2369229245BB6A500100012 /* DetailedRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369228245BB6A500100012 /* DetailedRecipeViewController.swift */; };
+		D236922F245BC0BB00100012 /* RecipeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236922E245BC0BB00100012 /* RecipeListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D2369204245B828B00100012 /* MyCookbooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCookbooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2369207245B828B00100012 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2369209245B828B00100012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D236920B245B828B00100012 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		D236920D245B828B00100012 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D2369210245B828B00100012 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2369212245B829800100012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +34,8 @@
 		D2369221245B837C00100012 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D2369222245B86E500100012 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D2369226245B967C00100012 /* NewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewController.swift; sourceTree = "<group>"; };
+		D2369228245BB6A500100012 /* DetailedRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRecipeViewController.swift; sourceTree = "<group>"; };
+		D236922E245BC0BB00100012 /* RecipeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +74,8 @@
 				D2369222245B86E500100012 /* Recipe.swift */,
 				D2369209245B828B00100012 /* SceneDelegate.swift */,
 				D2369226245B967C00100012 /* NewRecipeViewController.swift */,
-				D236920B245B828B00100012 /* RecipeListViewController.swift */,
+				D2369228245BB6A500100012 /* DetailedRecipeViewController.swift */,
+				D236922E245BC0BB00100012 /* RecipeListTableViewController.swift */,
 				D236920D245B828B00100012 /* SecondViewController.swift */,
 				D236920F245B828B00100012 /* Main.storyboard */,
 				D2369212245B829800100012 /* Assets.xcassets */,
@@ -162,12 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2369229245BB6A500100012 /* DetailedRecipeViewController.swift in Sources */,
 				D2369227245B967C00100012 /* NewRecipeViewController.swift in Sources */,
 				D236920E245B828B00100012 /* SecondViewController.swift in Sources */,
 				D236921E245B82DE00100012 /* RecipeDb.swift in Sources */,
-				D236920C245B828B00100012 /* RecipeListViewController.swift in Sources */,
 				D2369223245B86E500100012 /* Recipe.swift in Sources */,
 				D2369208245B828B00100012 /* AppDelegate.swift in Sources */,
+				D236922F245BC0BB00100012 /* RecipeListTableViewController.swift in Sources */,
 				D236920A245B828B00100012 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
