@@ -46,11 +46,7 @@ class DetailedRecipeViewController: UITableViewController {
             cell!.textLabel?.text = recipe.steps
             cell!.textLabel?.numberOfLines = 0
         case 3:
-            let recipeImage = recipe.image
-            let imageURL = URL(fileURLWithPath: recipeImage)
-            let image    = UIImage(contentsOfFile: imageURL.path)
-            var imageView = cell!.imageView
-            imageView!.image = image
+            cell!.imageView?.image = ImageResourceManager.sharedInstance.getSavedImage(name: recipe.title)
         default:
             break;
         }

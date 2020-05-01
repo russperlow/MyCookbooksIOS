@@ -44,12 +44,18 @@ class NewRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }else{
-            //let imagePath = writeImageToDirectory(title: recipeTitle.text!)
-            //print(imagePath)
-            let imagePath = imageResourceManager.saveImage(image: uploadImageView.image!, imageTitle: recipeTitle.text!)
+
+            let imageSaved = imageResourceManager.saveImage(image: uploadImageView.image!, imageTitle: recipeTitle.text!)
             
-            recipeDb.insertRecipe(title: recipeTitle.text!, ingredients: recipeIngredients.text, steps: recipeSteps.text, image: imagePath)
-            navigationController?.popViewController(animated: true)
+            if(imageSaved){
+            
+                recipeDb.insertRecipe(title: recipeTitle.text!, ingredients: recipeIngredients.text, steps: recipeSteps.text, image: recipeTitle.text!)
+                navigationController?.popViewController(animated: true)
+            }else{
+                let alert = UIAlertController(title: "Error Saving Image", message: "Please try again. Choose another image if this continues.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         
     }

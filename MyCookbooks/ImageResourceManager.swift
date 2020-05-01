@@ -15,22 +15,22 @@ class ImageResourceManager{
         return instance
     }()
     
-    func saveImage(image: UIImage, imageTitle: String) -> String{
+    func saveImage(image: UIImage, imageTitle: String) -> Bool{
         guard let data = image.jpegData(compressionQuality: 1) ?? image.pngData() else {
-            return "fail"
+            return false
         }
         
         guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
-            return "fail"
+            return false
             
         }
         
         do{
             try data.write(to: directory.appendingPathComponent(imageTitle)!)
-            return imageTitle
+            return true
         }catch{
             print(error.localizedDescription)
-            return "fail"
+            return false
         }
     }
     
