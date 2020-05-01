@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "936F569C-BB5A-4E80-BD05-C2787F8E2F03"
+            uuid = "382EEFCB-3624-4835-8332-A4350FF7390A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyCookbooks/RecipeListTableViewController.swift"
+            filePath = "MyCookbooks/RestApiManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CC467A9E-9314-42DC-B283-3EF924F2315C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyCookbooks/NewRecipeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "addNewRecipe(_:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

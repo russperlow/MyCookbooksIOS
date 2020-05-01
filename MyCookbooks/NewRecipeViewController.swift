@@ -44,6 +44,7 @@ class NewRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             self.present(alert, animated: true, completion: nil)
         }else{
             let imagePath = writeImageToDirectory(title: recipeTitle.text!)
+            print(imagePath)
             recipeDb.insertRecipe(title: recipeTitle.text!, ingredients: recipeIngredients.text, steps: recipeSteps.text, image: imagePath)
             navigationController?.popViewController(animated: true)
         }

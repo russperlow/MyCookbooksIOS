@@ -46,15 +46,11 @@ class DetailedRecipeViewController: UITableViewController {
             cell!.textLabel?.text = recipe.steps
             cell!.textLabel?.numberOfLines = 0
         case 3:
-            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-            if let dirPath          = paths.first
-            {
-                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(recipe.image)
-               let image    = UIImage(contentsOfFile: imageURL.path)
-                cell!.imageView?.image = image
-            }
+            let recipeImage = recipe.image
+            let imageURL = URL(fileURLWithPath: recipeImage)
+            let image    = UIImage(contentsOfFile: imageURL.path)
+            var imageView = cell!.imageView
+            imageView!.image = image
         default:
             break;
         }
@@ -80,16 +76,5 @@ class DetailedRecipeViewController: UITableViewController {
         
         return title
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
