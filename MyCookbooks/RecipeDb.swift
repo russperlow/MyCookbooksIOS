@@ -80,7 +80,8 @@ class RecipeDb {
             return
         }
         
-        if sqlite3_bind_int(stmt, 1, Int32(id)) != SQLITE_DONE {
+        sqlite3_bind_int(stmt, 1, Int32(id))
+        if sqlite3_step(stmt) != SQLITE_DONE {
             sqlError(specific: "binding deletion for \(id)")
             return
         }

@@ -37,10 +37,14 @@ class RecipeListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "recipe")
-        let recipe: Recipe
-        recipe = recipeDb.recipeList[indexPath.row]
-        cell.textLabel?.text = recipe.title
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recipe", for: indexPath) as! RecipeTableViewCell
+        let recipe: Recipe = recipeDb.recipeList[indexPath.row];
+
+        cell.recipeTitle.text = recipe.title
+
+        cell.imageView?.image = ImageResourceManager.sharedInstance.getSavedImage(name: recipe.title)
+        
         return cell
     }
     

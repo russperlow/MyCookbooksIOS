@@ -18,6 +18,7 @@ class NewRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     
     var recipeDb = RecipeDb.sharedInstance
     var imageSelected = false
+    var imageResourceManager = ImageResourceManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class NewRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         recipeSteps.layer.borderWidth = 1
     }
     @IBAction func cancelBtnClicked(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addNewRecipe(_ sender: Any) {
@@ -43,8 +44,10 @@ class NewRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }else{
-            let imagePath = writeImageToDirectory(title: recipeTitle.text!)
-            print(imagePath)
+            //let imagePath = writeImageToDirectory(title: recipeTitle.text!)
+            //print(imagePath)
+            let imagePath = imageResourceManager.saveImage(image: uploadImageView.image!, imageTitle: recipeTitle.text!)
+            
             recipeDb.insertRecipe(title: recipeTitle.text!, ingredients: recipeIngredients.text, steps: recipeSteps.text, image: imagePath)
             navigationController?.popViewController(animated: true)
         }
