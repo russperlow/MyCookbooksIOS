@@ -56,8 +56,6 @@ class RecipeListTableViewController: UITableViewController {
         let recipe = recipeDb.recipeList[indexPath.row]
         print("Clicked \(recipe.title)")
 
-//        let detailVC = DetailedRecipeViewController(style: .grouped)
-//        detailVC.recipe = recipe
         let detailVC = storyboard?.instantiateViewController(identifier: "DetailedRecipeViewController") as! DetailedRecipeViewController
         detailVC.recipe = recipe
         navigationController?.pushViewController(detailVC, animated: true)

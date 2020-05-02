@@ -15,6 +15,7 @@ class DetailedRecipeViewController: UIViewController {
     
     @IBOutlet weak var stepsTextField: UITextView!
     @IBOutlet weak var ingredientsTextField: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         recipeTitle.text = recipe!.title
@@ -24,7 +25,7 @@ class DetailedRecipeViewController: UIViewController {
         stepsTextField.layer.borderColor = UIColor.lightGray.cgColor
         stepsTextField.layer.borderWidth = 1.0
         stepsTextField.text = recipe!.steps
-        
+        imageView.image = ImageResourceManager.sharedInstance.getSavedImage(name: recipe!.title)
     
         // Do any additional setup after loading the view.
     }
