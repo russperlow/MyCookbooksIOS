@@ -46,8 +46,8 @@ class RecipeListTableViewController: UITableViewController {
         cell.imageView?.frame = CGRect(x: 0, y: 0, width: 75, height: 75)
 
         let image = ImageResourceManager.sharedInstance.getSavedImage(name: recipe.title)
-        cell.imageView?.clipsToBounds = true
-        cell.imageView?.image = image
+        cell.recipeImage?.clipsToBounds = true
+        cell.recipeImage?.image = image
         return cell
     }
     
