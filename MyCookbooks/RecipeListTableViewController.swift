@@ -43,7 +43,10 @@ class RecipeListTableViewController: UITableViewController {
 
         cell.recipeTitle.text = recipe.title
         
+        cell.imageView?.frame = CGRect(x: 0, y: 0, width: 75, height: 75)
+
         let image = ImageResourceManager.sharedInstance.getSavedImage(name: recipe.title)
+        cell.imageView?.clipsToBounds = true
         cell.imageView?.image = image
         return cell
     }
@@ -53,9 +56,10 @@ class RecipeListTableViewController: UITableViewController {
         let recipe = recipeDb.recipeList[indexPath.row]
         print("Clicked \(recipe.title)")
 
-        let detailVC = DetailedRecipeViewController(style: .grouped)
+//        let detailVC = DetailedRecipeViewController(style: .grouped)
+//        detailVC.recipe = recipe
+        let detailVC = storyboard?.instantiateViewController(identifier: "DetailedRecipeViewController") as! DetailedRecipeViewController
         detailVC.recipe = recipe
-        
         navigationController?.pushViewController(detailVC, animated: true)
     }
 
