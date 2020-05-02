@@ -203,9 +203,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j7m-5y-0VW">
-                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="Search"/>
                             <connections>
                                 <action selector="searchBtnPressed:" destination="aFd-Bj-I4j" eventType="touchUpInside" id="Yei-MT-UsF"/>
                             </connections>
@@ -223,7 +223,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-cT-RZT">
-                                            <rect key="frame" x="107" y="11" width="287" height="21"/>
+                                            <rect key="frame" x="64" y="11" width="273" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -242,11 +242,37 @@
                             <outlet property="delegate" destination="aFd-Bj-I4j" id="3b0-S0-cm1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Fsl-9F-rw1"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Rnc-2R-dYa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opp-ld-BsG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1876.8115942028987" y="0.0"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="Myx-Rr-QgS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hpg-Gf-qdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Iwb-E6-sH2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Root View Controller" id="rrZ-fk-IH0"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1769" y="717"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8OY-eh-the">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qla-TM-3mz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="A6f-Vg-EYI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a4b-i5-iP8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Iwb-E6-sH2" kind="relationship" relationship="rootViewController" id="b1q-rY-cw7"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="850" y="717"/>
         </scene>
         <!--Item-->
         <scene sceneID="ppu-zv-5d1">

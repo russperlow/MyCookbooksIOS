@@ -17,10 +17,10 @@ class RestApiManager: NSObject {
     var delegate: SearchedRecipeDelegate?
     
     override init() {
-        urlString = "http://www.recipepuppy.com/api/?i=peppers"
+        urlString = "http://www.recipepuppy.com/api/?i="
     }
     
-    func loadData(){
+    func loadData(ingredientsQuery: String){
         let session = URLSession.shared
         let task = session.dataTask(with: URL(string: urlString)!){
             (data, response, error) in

@@ -95,14 +95,4 @@ class NewRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func writeImageToDirectory(title: String) -> String{
-        let fileManager = FileManager.default
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("\(title).png")
-        
-        let data = uploadImageView.image!.pngData()
-        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
-        
-        return imagePath as String
-    }
-    
 }
