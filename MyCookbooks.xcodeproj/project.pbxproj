@@ -23,6 +23,8 @@
 		D2369237245CB47B00100012 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369236245CB47B00100012 /* RecipeTableViewCell.swift */; };
 		D2369239245CBEB200100012 /* ImageResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2369238245CBEB200100012 /* ImageResourceManager.swift */; };
 		D236923B245CDF0F00100012 /* SearchedRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236923A245CDF0F00100012 /* SearchedRecipeTableViewCell.swift */; };
+		D236923D245F3E3200100012 /* CocktailDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236923C245F3E3100100012 /* CocktailDb.swift */; };
+		D236923F245F3E9F00100012 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D236923E245F3E9F00100012 /* Cocktail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		D2369236245CB47B00100012 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		D2369238245CBEB200100012 /* ImageResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResourceManager.swift; sourceTree = "<group>"; };
 		D236923A245CDF0F00100012 /* SearchedRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedRecipeTableViewCell.swift; sourceTree = "<group>"; };
+		D236923C245F3E3100100012 /* CocktailDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDb.swift; sourceTree = "<group>"; };
+		D236923E245F3E9F00100012 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,9 @@
 			children = (
 				D2369207245B828B00100012 /* AppDelegate.swift */,
 				D236921D245B82DE00100012 /* RecipeDb.swift */,
+				D236923C245F3E3100100012 /* CocktailDb.swift */,
 				D2369222245B86E500100012 /* Recipe.swift */,
+				D236923E245F3E9F00100012 /* Cocktail.swift */,
 				D2369209245B828B00100012 /* SceneDelegate.swift */,
 				D2369226245B967C00100012 /* NewRecipeViewController.swift */,
 				D2369228245BB6A500100012 /* DetailedRecipeViewController.swift */,
@@ -181,12 +187,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2369229245BB6A500100012 /* DetailedRecipeViewController.swift in Sources */,
+				D236923D245F3E3200100012 /* CocktailDb.swift in Sources */,
 				D2369231245C8AB800100012 /* RestApiManager.swift in Sources */,
 				D2369227245B967C00100012 /* NewRecipeViewController.swift in Sources */,
 				D2369237245CB47B00100012 /* RecipeTableViewCell.swift in Sources */,
 				D236921E245B82DE00100012 /* RecipeDb.swift in Sources */,
 				D2369223245B86E500100012 /* Recipe.swift in Sources */,
 				D2369233245C9E2800100012 /* SearchedRecipe.swift in Sources */,
+				D236923F245F3E9F00100012 /* Cocktail.swift in Sources */,
 				D2369239245CBEB200100012 /* ImageResourceManager.swift in Sources */,
 				D236923B245CDF0F00100012 /* SearchedRecipeTableViewCell.swift in Sources */,
 				D2369208245B828B00100012 /* AppDelegate.swift in Sources */,
