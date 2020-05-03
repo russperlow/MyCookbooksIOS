@@ -16,7 +16,7 @@ class DetailedCocktailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func trashButtonClicked(_ sender: Any) {
-        let alert = UIAlertController(title: "Delete Confirmation", message: "Are you sure you would like to delete \(cocktail?.title)?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Delete Confirmation", message: "Are you sure you would like to delete \(cocktail!.title)?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive, handler: { (UIAlertAction) in
             self.dismiss(animated: true, completion: nil)
