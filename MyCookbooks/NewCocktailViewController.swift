@@ -1,5 +1,5 @@
 //
-//  NewRecipeViewController.swift
+//  NewCocktailViewController.swift
 //  MyCookbooks
 //
 //  Copyright © 2020 Russ Perlow. All rights reserved.
@@ -7,32 +7,35 @@
 
 import UIKit
 
-class NewRecipeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewCocktailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+//    @IBOutlet weak var uploadImageView: UIImageView!
+//
+//    @IBOutlet weak var cocktailTitle: UITextField!
+//    @IBOutlet weak var cocktailIngredients: UITextView!
+//    @IBOutlet weak var cocktailSteps: UITextView!
     @IBOutlet weak var uploadImageView: UIImageView!
     
-    @IBOutlet weak var recipeTitle: UITextField!
-    @IBOutlet weak var recipeIngredients: UITextView!
-    @IBOutlet weak var recipeSteps: UITextView!
+    @IBOutlet weak var cocktailTitle: UITextField!
     
-    var recipeDb = RecipeDb.sharedInstance
+    @IBOutlet weak var cocktailIngredients: UITextView!
+    
+    var cocktailDb = CocktailDb.sharedInstance
     var imageSelected = false
     var imageResourceManager = ImageResourceManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeIngredients.layer.borderColor = UIColor.lightGray.cgColor
-        recipeSteps.layer.borderColor = UIColor.lightGray.cgColor
-        recipeIngredients.layer.borderWidth = 1
-        recipeSteps.layer.borderWidth = 1
+        cocktailIngredients.layer.borderColor = UIColor.lightGray.cgColor
+        cocktailIngredients.layer.borderWidth = 1
     }
     @IBAction func cancelBtnClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addNewRecipe(_ sender: Any) {
+    @IBAction func addNewCocktail(_ sender: Any) {
         
-        if(recipeTitle.text?.isEmpty ?? false || recipeSteps.text.isEmpty || recipeIngredients.text.isEmpty){
+        if(cocktailTitle.text?.isEmpty ?? false || cocktailIngredients.text.isEmpty){
             
             let alert = UIAlertController(title: "Empty Fields", message: "Please make sure all fields are filled", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
@@ -44,11 +47,11 @@ class NewRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             self.present(alert, animated: true, completion: nil)
         }else{
 
-            let imageSaved = imageResourceManager.saveImage(image: uploadImageView.image!, imageTitle: recipeTitle.text!)
+            let imageSaved = imageResourceManager.saveImage(image: uploadImageView.image!, imageTitle: cocktailTitle.text!)
             
             if(imageSaved){
             
-                recipeDb.insertRecipe(title: recipeTitle.text!, ingredients: recipeIngredients.text, steps: recipeSteps.text, image: recipeTitle.text!)
+                cocktailDb.insertCocktail(title: cocktailTitle.text!, ingredients: cocktailIngredients.text, image: cocktailTitle.text!)
                 navigationController?.popViewController(animated: true)
             }else{
                 let alert = UIAlertController(title: "Error Saving Image", message: "Please try again. Choose another image if this continues.", preferredStyle: UIAlertController.Style.alert)

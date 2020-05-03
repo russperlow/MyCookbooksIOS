@@ -1,24 +1,25 @@
 //
-//  RecipeListTableViewController.swift
+//  CocktailListTableViewController.swift
 //  MyCookbooks
 //
+//  Created by Russ Perlow on 5/3/20.
 //  Copyright © 2020 Russ Perlow. All rights reserved.
 //
 
 import UIKit
 
-class RecipeListTableViewController: UITableViewController {
+class CocktailListTableViewController: UITableViewController {
 
-    var recipeDb = RecipeDb.sharedInstance
+    var cocktailDb = CocktailDb.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
-        recipeDb.readValues()
+        cocktailDb.readValues()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        recipeDb.readValues()
+        cocktailDb.readValues()
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
@@ -32,31 +33,31 @@ class RecipeListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipeDb.recipeList.count
+        return cocktailDb.cocktailList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recipe", for: indexPath) as! RecipeTableViewCell
-        let recipe: Recipe = recipeDb.recipeList[indexPath.row];
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cocktail", for: indexPath) as! CocktailTableViewCell
+        let cocktail: Cocktail = cocktailDb.cocktailList[indexPath.row];
 
-        cell.recipeTitle.text = recipe.title
+        cell.cocktailTitle.text = cocktail.title
         
         cell.imageView?.frame = CGRect(x: 0, y: 0, width: 75, height: 75)
 
-        let image = ImageResourceManager.sharedInstance.getSavedImage(name: recipe.title)
-        cell.recipeImage?.clipsToBounds = true
-        cell.recipeImage?.image = image
+        let image = ImageResourceManager.sharedInstance.getSavedImage(name: cocktail.title)
+        cell.cocktailImage?.clipsToBounds = true
+        cell.cocktailImage?.image = image
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let recipe = recipeDb.recipeList[indexPath.row]
-        print("Clicked \(recipe.title)")
+        let cocktail = cocktailDb.cocktailList[indexPath.row]
+        print("Clicked \(cocktail.title)")
 
-        let detailVC = storyboard?.instantiateViewController(identifier: "DetailedRecipeViewController") as! DetailedRecipeViewController
-        detailVC.recipe = recipe
+        let detailVC = storyboard?.instantiateViewController(identifier: "DetailedCocktailViewController") as! DetailedCocktailViewController
+        detailVC.cocktail = cocktail
         navigationController?.pushViewController(detailVC, animated: true)
     }
 

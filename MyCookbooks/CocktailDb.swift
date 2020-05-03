@@ -2,7 +2,6 @@
 //  CocktailDb.swift
 //  MyCookbooks
 //
-//  Created by Russ Perlow on 5/3/20.
 //  Copyright © 2020 Russ Perlow. All rights reserved.
 //
 
@@ -30,14 +29,14 @@ class CocktailDb {
             print("error opening database")
         }
         
-        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS cocktails (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, ingredients TEXT, steps TEXT, image TEXT)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS cocktails (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, ingredients TEXT, image TEXT)", nil, nil, nil) != SQLITE_OK {
             sqlError(specific: "creating table")
         }
     }
 
-    func insertCocktail(title: String, ingredients: String, steps: String, image: String){
+    func insertCocktail(title: String, ingredients: String, image: String){
         var stmt: OpaquePointer?
-        let queryString = "INSERT INTO cocktails (title, ingredients, steps, image) VALUES (?,?,?,?)"
+        let queryString = "INSERT INTO cocktails (title, ingredients, image) VALUES (?,?,?)"
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK {
             sqlError(specific: "preparing insert")
@@ -54,12 +53,7 @@ class CocktailDb {
             return
         }
         
-        if sqlite3_bind_text(stmt, 3, NSString(string: steps).utf8String, -1, nil) != SQLITE_OK{
-            sqlError(specific: "binding steps")
-            return
-        }
-        
-        if sqlite3_bind_text(stmt, 4, NSString(string: image).utf8String, -1, nil) != SQLITE_OK{
+        if sqlite3_bind_text(stmt, 3, NSString(string: image).utf8String, -1, nil) != SQLITE_OK{
             sqlError(specific: "binding image")
             return
         }
@@ -106,10 +100,9 @@ class CocktailDb {
             let id = Int(sqlite3_column_int(stmt, 0))
             let title = String(cString: sqlite3_column_text(stmt, 1))
             let ingredients = String(cString: sqlite3_column_text(stmt, 2))
-            let steps = String(cString: sqlite3_column_text(stmt, 3))
-            let image = String(cString: sqlite3_column_text(stmt, 4))
+            let image = String(cString: sqlite3_column_text(stmt, 3))
             
-            cocktailList.append(Cocktail(id: id, title: title, ingredients: ingredients, steps: steps, image: image))
+            cocktailList.append(Cocktail(id: id, title: title, ingredients: ingredients, image: image))
         }
         
     }

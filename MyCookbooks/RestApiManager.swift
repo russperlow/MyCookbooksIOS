@@ -2,7 +2,6 @@
 //  ApiManager.swift
 //  MyCookbooks
 //
-//  Created by Russ Perlow on 5/1/20.
 //  Copyright © 2020 Russ Perlow. All rights reserved.
 //
 
